@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio | Nihilists Take Their Coffee Black</title>
+  <meta name="description" content="A collection of philosophical rambles and otherwise random takes on life, dogs, toilets, everything." />
+  <link rel="stylesheet" href="../assets/site.css" />
+  
+</head>
+<body class="theme-home">
+  <button class="menu-toggle" id="menuToggle" aria-controls="siteSidebar" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button><div class="menu-overlay" id="menuOverlay"></div>
+  <aside class="sidebar" id="siteSidebar"><div class="sidebar-inner"><a class="site-brand" href="../index.html"><span class="brand-mark">☕</span><span class="brand-stack"><strong>Nihilists Take Their Coffee Black</strong><small>A collection of philosophical rambles and otherwise random takes on life, dogs, toilets, everything.</small></span></a><nav class="side-nav" aria-label="Site sections"><a class="side-link" href="../index.html">Home</a><details class="side-group" ><summary>Where to Poop</summary><div class="side-sub-links"><a class="side-sub-link" href="../where-to-poop-toronto/index.html">Where to Poop: Toronto</a><a class="side-sub-link" href="../where-to-poop-hong-kong/index.html">Where to Poop: Hong Kong</a></div></details><details class="side-group" ><summary>Writing</summary><div class="side-sub-links"><a class="side-sub-link" href="../philosophical-yap-sessions/index.html">Philosophical yap sessions</a><a class="side-sub-link" href="../reflections-of-a-casual-bouldering-enthusiast/index.html">Reflections of a Casual Bouldering Enthusiast</a><a class="side-sub-link" href="../book-and-media-reviews/index.html">Book and Media Reviews</a></div></details><details class="side-group" ><summary>Albums</summary><div class="side-sub-links"><a class="side-sub-link" href="../kyle-the-dog/index.html">Kyle the Dog</a><a class="side-sub-link" href="../photos/index.html">Photos</a></div></details><a class="side-link" href="../hd-hen/index.html">HD Hen</a></nav></div></aside>
+  <div class="page-wrap">
+    <main class="main-shell">
+<section class="hero-panel stack">
+  <p class="page-kicker">Studio</p>
+  <h1>Content workshop</h1>
+  <p class="lead">Generate new post files and content snippets for manual upload.</p>
+</section>
+<section class="studio-card stack">
+  <div class="form-grid">
+    <div><label class="label" for="sectionSelect">Section</label><select class="select" id="sectionSelect"><option value="philosophical-yap-sessions">Philosophical yap sessions</option><option value="reflections-of-a-casual-bouldering-enthusiast">Reflections of a Casual Bouldering Enthusiast</option><option value="book-and-media-reviews">Book and Media Reviews</option><option value="kyle-the-dog">Kyle the Dog</option><option value="photos">Photos</option></select></div>
+    <div><label class="label" for="titleInput">Title</label><input class="input" id="titleInput" /></div>
+    <div><label class="label" for="slugInput">Slug</label><input class="input" id="slugInput" placeholder="leave blank to auto-generate" /></div>
+    <div><label class="label" for="subtitleInput">Subtitle</label><input class="input" id="subtitleInput" /></div>
+    <div><label class="label" for="dateInput">Date</label><input class="input" id="dateInput" type="date" /></div>
+    <div><label class="label" for="excerptInput">Excerpt</label><textarea class="textarea" id="excerptInput"></textarea></div>
+    <div><label class="label" for="bodyInput">Body paragraphs</label><textarea class="textarea" id="bodyInput" placeholder="Write paragraphs separated by a blank line."></textarea></div>
+    <div class="button-row"><button class="btn" id="generateBtn" type="button">Generate files</button></div>
+  </div>
+</section>
+<section class="studio-card stack copy-area hidden" id="outputArea">
+  <h2>Output</h2>
+  <p class="small-note">Upload the generated HTML page to the indicated folder, then add the object snippet to your content source if you keep a data file.</p>
+  <div>
+    <div class="label">Suggested file path</div>
+    <div class="code-block" id="pathOutput"></div>
+  </div>
+  <div>
+    <div class="label">Entry object</div>
+    <div class="code-block" id="entryOutput"></div>
+  </div>
+  <div>
+    <div class="label">HTML page</div>
+    <div class="code-block" id="htmlOutput"></div>
+  </div>
+</section>
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const slugify = (value) => String(value||'').toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').replace(/--+/g,'-');
+  const sectionTitles = {
+    'philosophical-yap-sessions': 'Philosophical yap sessions',
+    'reflections-of-a-casual-bouldering-enthusiast': 'Reflections of a Casual Bouldering Enthusiast',
+    'book-and-media-reviews': 'Book and Media Reviews',
+    'kyle-the-dog': 'Kyle the Dog',
+    'photos': 'Photos'
+  };
+  $('generateBtn').addEventListener('click', () => {
+    const section = $('sectionSelect').value;
+    const title = $('titleInput').value.trim();
+    const slug = ($('slugInput').value.trim() || slugify(title));
+    const subtitle = $('subtitleInput').value.trim();
+    const date = $('dateInput').value || new Date().toISOString().slice(0,10);
+    const excerpt = $('excerptInput').value.trim();
+    const body = $('bodyInput').value.split(/
+\s*
+/).map(s => s.trim()).filter(Boolean);
+    if (!title || !slug) return;
+    const entry = { slug, title, subtitle, date, excerpt, body };
+    $('outputArea').classList.remove('hidden');
+    $('pathOutput').textContent = `${section}/posts/${slug}/index.html`;
+    $('entryOutput').textContent = JSON.stringify(entry, null, 2);
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>${title} | Nihilists Take Their Coffee Black</title>
+  <link rel="stylesheet" href="../../../assets/site.css" />
+</head>
+<body class="theme-home">
+  <button class="menu-toggle" id="menuToggle" aria-controls="siteSidebar" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button><div class="menu-overlay" id="menuOverlay"></div>
+  <div class="page-wrap"><main class="main-shell"><section class="hero-panel stack"><p class="page-kicker">${sectionTitles[section]}</p><h1>${title}</h1><p class="lead">${subtitle}</p><p class="review-date">${date}</p></section><section class="content-card stack"><div class="text-panel">${body.map(p => `<p>${p}</p>`).join('')}</div></section></main><footer class="site-footer">Created by Jake Lau</footer></div><script src="../../../assets/site.js"></script>
+</body>
+</html>`;
+    $('htmlOutput').textContent = html;
+  });
+})();
+</script>
+</main>
+    <footer class="site-footer">Created by Jake Lau</footer>
+  </div>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
