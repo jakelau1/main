@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Admin</title>
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body data-root-prefix="../">
+  <div id="globalShell"></div>
+  <div class="app-shell">
+    <main class="main-content">
+      <section class="page-section">
+        <div class="container admin-grid">
+          <section class="admin-form-card">
+            <div class="eyebrow">Local generator</div>
+            <h1 style="font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,8vw,3rem);margin:.5rem 0 .8rem;">Content admin</h1>
+            <p class="admin-note">Use this page to queue new entries for Philosophical yap sessions, Bouldering, Book and Media Reviews, Photos, and Kyle the Dog. It generates a consolidated <code>assets/content.js</code> and the matching post pages for manual upload to GitHub.</p>
+            <div class="path-box" id="contentSummary">Loading current content data…</div>
+            <form class="admin-form" id="contentAdminForm" style="margin-top:1rem;">
+              <div class="admin-form-grid">
+                <div>
+                  <label for="entrySection">Section</label>
+                  <select id="entrySection"></select>
+                </div>
+                <div>
+                  <label for="entryDate">Date</label>
+                  <input id="entryDate" type="date" />
+                </div>
+                <div>
+                  <label for="entryTitle">Title</label>
+                  <input id="entryTitle" required />
+                </div>
+                <div>
+                  <label for="entrySlug">Slug</label>
+                  <input id="entrySlug" required />
+                  <div class="form-help">Auto-generated from the title. You can edit it.</div>
+                </div>
+                <div>
+                  <label for="entrySubtitle">Subtitle</label>
+                  <input id="entrySubtitle" />
+                </div>
+                <div>
+                  <label for="entryImage">Image path (optional)</label>
+                  <input id="entryImage" placeholder="assets/photos/example.jpg" />
+                </div>
+              </div>
+              <div>
+                <label for="entrySummary">Summary</label>
+                <textarea id="entrySummary"></textarea>
+              </div>
+              <div>
+                <label for="entryBody">Body text</label>
+                <textarea id="entryBody"></textarea>
+              </div>
+              <div class="output-actions">
+                <button class="btn btn-primary" type="submit">Add to batch</button>
+                <button class="btn btn-primary" type="button" id="downloadContentButton">Download updated content.js</button>
+                <button class="btn btn-primary" type="button" id="downloadPageButton">Download latest page</button>
+                <button class="btn btn-primary" type="button" id="downloadBundleButton">Download upload bundle (.zip)</button>
+                <button class="btn btn-ghost" type="button" id="copyContentObjectButton">Copy latest object</button>
+                <button class="btn btn-ghost" type="button" id="clearContentFormButton">Clear form</button>
+              </div>
+            </form>
+          </section>
+          <section class="admin-grid">
+            <div class="admin-card">
+              <h3 style="margin-bottom:.65rem;">Queued entries</h3>
+              <div class="queue-list" id="queueList"></div>
+            </div>
+            <div class="admin-card">
+              <h3 style="margin-bottom:.65rem;">Latest output path</h3>
+              <div class="path-box" id="contentFilePath">section/posts/your-slug/index.html</div>
+            </div>
+            <div class="admin-card">
+              <h3 style="margin-bottom:.65rem;">Latest entry object</h3>
+              <textarea class="code-output" id="contentObjectOutput" readonly></textarea>
+            </div>
+            <div class="admin-card">
+              <h3 style="margin-bottom:.65rem;">Latest page HTML</h3>
+              <textarea class="code-output" id="contentPageOutput" readonly></textarea>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container">Created by Jake Lau</div></footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="../assets/content.js"></script>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

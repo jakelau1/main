@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Where to Poop: Toronto Admin | Nihilists Take Their Coffee Black</title>
+  <link rel="stylesheet" href="../../assets/site.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body data-root="../../" data-section="where-to-poop-toronto" data-page="toilet-admin" >
+  <button class="menu-toggle" data-menu-toggle>Menu</button>
+  <div class="sidebar-backdrop" data-menu-backdrop></div>
+  <div class="app-shell">
+    <aside id="site-sidebar" class="site-sidebar"></aside>
+    <div class="site-main">
+      <main class="page-frame">
+        
+<div class="toilet-shell">
+  <section class="intro-card">
+    <div class="eyebrow">Where to Poop Admin</div>
+    <h1>Generate new Toronto review pages.</h1>
+    <p class="muted">Queue multiple reviews, then export a bundle containing an updated <code>assets/content.js</code> plus the matching review pages for manual upload to GitHub.</p>
+  </section>
+
+  <section class="admin-grid">
+    <form id="review-admin-form" class="admin-card">
+      <div><label for="title">Title</label><input id="title" type="text" required /></div>
+      <div><label for="slug">Slug</label><input id="slug" type="text" required /></div>
+      <div><label for="location">Location</label><input id="location" type="text" required /></div>
+      <div><label for="area">Area</label><input id="area" type="text" required /></div>
+      <div><label for="neighborhood">Neighborhood</label><input id="neighborhood" type="text" required /></div>
+      <div><label for="suitableFor">Suitable for</label><select id="suitableFor"><option>No. 1</option><option>No. 1 & No. 2</option></select></div>
+      <div><label for="accessibility">Accessibility</label><select id="accessibility"><option>Easily Accessible</option><option>Limited</option><option>Difficult to Access</option></select></div>
+      <div><label for="passwordRequired">Password required?</label><select id="passwordRequired"><option value="false">No</option><option value="true">Yes</option></select></div>
+      <div><label for="password">Password</label><input id="password" type="text" /></div>
+      <div><label for="cleanliness">Cleanliness</label><input id="cleanliness" type="number" step="0.5" min="0" max="5" value="4" /></div>
+      <div><label for="aesthetics">Aesthetics</label><input id="aesthetics" type="number" step="0.5" min="0" max="5" value="4" /></div>
+      <div><label for="facilities">Facilities</label><input id="facilities" type="number" step="0.5" min="0" max="5" value="4" /></div>
+      <div><label for="date">Date</label><input id="date" type="date" required /></div>
+      <div><label><input id="featured" type="checkbox" /> Featured Toilet</label></div>
+      <div><label for="summary">Summary</label><textarea id="summary"></textarea></div>
+      <div><label for="otherNotes">Other Notes</label><textarea id="otherNotes"></textarea></div>
+      <div class="button-row">
+        <button class="btn" type="submit">Add review to batch</button>
+        <button class="btn btn-secondary" type="button" id="review-download-bundle">Download upload bundle</button>
+        <button class="btn btn-secondary" type="button" id="review-download-content">Download content.js only</button>
+      </div>
+    </form>
+    <div class="admin-card">
+      <div class="section-head">
+        <h2>Queued reviews</h2>
+        <p>Toronto exports leave the rest of the site untouched.</p>
+      </div>
+      <div id="admin-queue" class="queue-list"></div>
+    </div>
+  </section>
+
+  <section class="admin-card">
+    <div class="section-head">
+      <h2>Updated content preview</h2>
+      <p>Includes the recalculated overall ratings.</p>
+    </div>
+    <pre id="admin-preview" class="reading-panel" style="overflow:auto;white-space:pre-wrap;"></pre>
+  </section>
+</div>
+
+      </main>
+      <footer id="site-footer" class="site-footer"></footer>
+    </div>
+  </div>
+  <script src="../../assets/content.js"></script>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>
