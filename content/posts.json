@@ -1,0 +1,82 @@
+{
+  "philosophical-yap-sessions": [
+    {
+      "title": "The Pinocchio Paradox",
+      "slug": "the-pinocchio-paradox",
+      "subtitle": "In which me and my friend Marco try to discuss whether Pinocchio is telling the truth... over 1L of sake.",
+      "excerpt": "The paradox goes as follows—Pinocchio proclaims: \"My nose grows now.\"\n\nLet us assume two scenarios: one where Pinocchio is telling the truth, and one where he is lying.\n\nIn the scenario where Pinocchio is telling the truth, his nose should grow. Yet, dear reader, we know that Pinocchio's nose only grows...",
+      "body": "The paradox goes as follows—Pinocchio proclaims: \"My nose grows now.\"\n\nLet us assume two scenarios: one where Pinocchio is telling the truth, and one where he is lying.\n\nIn the scenario where Pinocchio is telling the truth, his nose should grow. Yet, dear reader, we know that Pinocchio's nose only grows when he is lying. So he must have been telling a lie when he said the statement, \"My nose grows now.\" But if he was telling a lie, then his statement should be false; his nose should not grow now. This seems to rule out the possibility that Pinocchio was telling the truth.\n\nYet imagine the scenario where Pinocchio is lying. He proclaims: \"My nose grows now.\" Since he is lying, his nose should grow. Yet, if his nose grows, and he claims that his nose will grow, then he is by definition telling the truth. How, then, could he possibly be lying?\n\nOver a liter of sake, me and my friend Marco came up with two solutions to this problem: we must pay attention to Pinocchio's internal state, and we must consider time as a factor. Let me explain.\n\nHere is the first elegant solution to the Pinocchio paradox. In the situation where Pinocchio proclaims the actuality that his nose grows (i.e. wherein he proclaims that his nose will grow and it does indeed grow), it is possible that Pinocchio simply does not believe his nose will grow, yet says that it will grow. In this case, he has lied even though his statement is in fact correct, and so it is consistent with the fact that his nose has grown. Similar to how I might say, \"It will rain tomorrow,\" despite my not believing it will rain. As it turns out, it does rain tomorrow, contrary to my initial belief. Thus, I have still lied (i.e. my internal belief regarding the statement was false), yet my statement was in fact true.\n\nHere is another elegant solution: Pinocchio understands that his nose might grow, but not right this very moment. In this case, on a strict interpretation of the phrase, \"My nose grows now,\" he is in fact lying. Once Pinocchio tells the lie that his nose will grow immediately, his nose subsequently grows, because his statement was in fact false.\n\nWhat are your thoughts on me and Marco's solutions to this problem? I'd love to hear your feedback at jakes-blog.selection732@silomails.com.",
+      "date": "2026-04-05",
+      "youtubeUrl": "",
+      "rating": 4,
+      "media": [
+        {
+          "filename": "Pinocchio.jpg",
+          "type": "image/jpeg",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "reflections-of-a-casual-bouldering-enthusiast": [],
+  "book-and-media-reviews": [],
+  "doodling": [],
+  "cooking": [],
+  "kyle-the-dog": [
+    {
+      "title": "I smell something nice over there...",
+      "slug": "i-smell-something-nice-over-there",
+      "subtitle": "In which Kyle tries to discern what smells so god awfully nice.",
+      "excerpt": "\"Something smells nice over there...\n\nCould it be? No, impossible! A blue-rare steak!\"",
+      "body": "\"Something smells nice over there...\n\nCould it be? No, impossible! A blue-rare steak!\"",
+      "date": "2026-04-08",
+      "youtubeUrl": "",
+      "rating": 4,
+      "media": [
+        {
+          "filename": "Kyle Smells Something Nice.jpg",
+          "type": "image/jpeg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "title": "Being A Dog Is Difficult",
+      "slug": "being-a-dog-is-difficult",
+      "subtitle": "In which Kyle discusses the various struggles he faces as the world's cutest canine.",
+      "excerpt": "\"What's so hard about being a dog? To be so cute that humans want to pick you up all the time. It gets tiring, man! How would you like it if a giant picked you up and didn't let you go while he was getting entertained by something else?\"",
+      "body": "\"What's so hard about being a dog? To be so cute that humans want to pick you up all the time. It gets tiring, man! How would you like it if a giant picked you up and didn't let you go while he was getting entertained by something else?\"",
+      "date": "2026-04-07",
+      "youtubeUrl": "",
+      "rating": 4,
+      "media": [
+        {
+          "filename": "Kyle Yawns.jpg",
+          "type": "image/jpeg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "title": "Kyle the Dog Greets You!",
+      "slug": "kyle-the-dog-greets-you",
+      "subtitle": "In which Kyle says hi.",
+      "excerpt": "\"Oh hey there friend! Welcome to my page.\n\nIn here, you'll find me philosophizing about eggs, sweet potatoes, and long walks near the harbour front.\n\nWe'll also talk about the meaning of unconditional love, like how I unconditionally love the smell of cooked crabs...",
+      "body": "\"Oh hey there friend! Welcome to my page.\n\nIn here, you'll find me talking about eggs, sweet potatoes, and long walks near the harbour front.\n\nWe'll also talk about the meaning of unconditional love, like how I unconditionally love the smell of cooked crabs.\n\nAnyway, hope you enjoy my rants! See you back here soon!\n\n- Kyle\"",
+      "date": "2026-04-06",
+      "youtubeUrl": "",
+      "rating": 4,
+      "media": [
+        {
+          "filename": "IMG_20260328_232553_3.jpg",
+          "type": "image/jpeg",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "photos": [],
+  "reflections-from-a-mountaintop": [],
+  "piano": [],
+  "games-and-the-meaning-of-life": []
+}
